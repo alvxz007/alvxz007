@@ -12,7 +12,7 @@ ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ToggleButton.BorderSizePixel = 0
 ToggleButton.Position = UDim2.new(0, 0, 0.5, 0)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" -- Substitua pelo ID do seu ícone de caveira
+ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" --017a9a316999adbd588bea9f6ca9ba1
 
 ToggleButton.MouseButton1Click:Connect(function()
     Window:Toggle()
