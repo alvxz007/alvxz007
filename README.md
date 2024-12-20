@@ -5,17 +5,28 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/FsJak6AT"))() 
 local Window = Library.CreateLib("Blox Fruits Script", "DarkGreen")
 
 -- Ícone de Caveira para Abrir/Fechar o Menu
+local ToggleKey = Enum.KeyCode.LeftControl
 local ToggleButton = Instance.new("ImageButton")
 ToggleButton.Name = "ToggleButton"
 ToggleButton.Parent = game.CoreGui
 ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ToggleButton.BorderSizePixel = 0
-ToggleButton.Position = UDim2.new(0, 0, 0.5, 0)
+ToggleButton.Position = UDim2.new(0, 0, 0.5, -25)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" --017a9a316999adbd588bea9f6ca9ba1
+ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" -- Substitua pelo ID do seu ícone de caveira
 
-ToggleButton.MouseButton1Click:Connect(function()
-    Window:Toggle()
+local UserInputService = game:GetService("UserInputService")
+local isMenuOpen = true
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == ToggleKey then
+        isMenuOpen = not isMenuOpen
+        if isMenuOpen then
+            Window:Show()
+        else
+            Window:Hide()
+        end
+    end
 end)
 
 -- Aba Geral
