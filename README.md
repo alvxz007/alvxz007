@@ -13,7 +13,7 @@ ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ToggleButton.BorderSizePixel = 0
 ToggleButton.Position = UDim2.new(0, 0, 0.5, -25)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" -- Substitua pelo ID do seu ícone de caveira
+ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" -- XRmvthfpix58ZKuB9MvOcgHaHQ
 
 local UserInputService = game:GetService("UserInputService")
 local isMenuOpen = true
