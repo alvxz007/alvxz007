@@ -1,9 +1,24 @@
--- Variáveis e funções principais
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/uTms3xYs"))() -- Link para um exemplo de biblioteca de interface gráfica
+-- Biblioteca de Interface Gráfica
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/FsJak6AT"))() -- Exemplo de biblioteca GUI
 
-local Window = Library.CreateLib("Blox Fruits Script", "DarkGreen") -- Cria a janela principal
+-- Criando a Janela Principal
+local Window = Library.CreateLib("Blox Fruits Script", "DarkGreen")
 
--- Seção Geral
+-- Ícone de Caveira para Abrir/Fechar o Menu
+local ToggleButton = Instance.new("ImageButton")
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = game.CoreGui
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.BorderSizePixel = 0
+ToggleButton.Position = UDim2.new(0, 0, 0.5, 0)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Image = "rbxassetid://YOUR_SKULL_ICON_ASSET_ID" -- Substitua pelo ID do seu ícone de caveira
+
+ToggleButton.MouseButton1Click:Connect(function()
+    Window:Toggle()
+end)
+
+-- Aba Geral
 local Geral = Window:NewTab("Geral")
 local GeralSection = Geral:NewSection("Geral")
 
@@ -23,9 +38,9 @@ GeralSection:NewToggle("Auto Farm Money", "Farm automático de dinheiro", functi
     end
 end)
 
--- (Adicione as outras opções de farm aqui)
+-- (Adicionar todas as outras funções do menu Geral aqui)
 
--- Seção Itens e Missões
+-- Aba Itens e Missões
 local ItensMissoes = Window:NewTab("Itens e Missões")
 local ItensMissoesSection = ItensMissoes:NewSection("Itens e Missões")
 
@@ -37,9 +52,9 @@ ItensMissoesSection:NewToggle("Auto All Itens", "Coleta automática de todos os 
     end
 end)
 
--- (Adicione as outras opções de itens e missões aqui)
+-- (Adicionar todas as outras funções do menu Itens e Missões aqui)
 
--- Seção Status
+-- Aba Status
 local Status = Window:NewTab("Status")
 local StatusSection = Status:NewSection("Status")
 
@@ -47,7 +62,7 @@ StatusSection:NewButton("Auto Set Status", "Configura automaticamente o status",
     print("Auto Set Status Ativado")
 end)
 
--- Seção ESP
+-- Aba ESP
 local ESP = Window:NewTab("ESP")
 local ESPSection = ESP:NewSection("ESP")
 
@@ -59,9 +74,9 @@ ESPSection:NewToggle("ESP Baús", "Mostrar baús", function(state)
     end
 end)
 
--- (Adicione as outras opções de ESP aqui)
+-- (Adicionar todas as outras funções do menu ESP aqui)
 
--- Seção Raid
+-- Aba Raid
 local Raid = Window:NewTab("Raid")
 local RaidSection = Raid:NewSection("Raid")
 
@@ -73,13 +88,13 @@ RaidSection:NewToggle("Auto Farm Raid", "Farm automático de raids", function(st
     end
 end)
 
--- Seção Jogadores
+-- Aba Jogadores
 local Jogadores = Window:NewTab("Jogadores")
 local JogadoresSection = Jogadores:NewSection("Jogadores")
 
--- (Adicione funções para jogadores se necessário)
+-- (Adicionar funções de jogadores se necessário)
 
--- Funções adicionais
+-- Funções de automação
 function autoFarm()
     -- Função para auto farm
 end
@@ -95,12 +110,3 @@ end
 function autoRaid()
     -- Função para auto farm raid
 end
-
-
--- Loop para atualizar o aimlock
-game:GetService("RunService").RenderStepped:Connect(function()
-    if aimlockActive then
-        findTarget()
-        aimlock()
-    end
-end)
