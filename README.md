@@ -63,5 +63,3 @@ game:GetService("RunService").RenderStepped:Connect(function()
         aimlock()
     end
 end)
-
-
